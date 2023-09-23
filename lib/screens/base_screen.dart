@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
+import 'package:queezy/config/app_colors.dart';
 import 'package:queezy/screens/screens.dart';
 import 'package:queezy/store/store.dart';
 
@@ -28,12 +29,14 @@ class _BaseScreenState extends State<BaseScreen> {
       ),
       icon: Icon(
         Icons.home_outlined,
-        color: Colors.black,
       ),
       label: 'Home',
     ),
     NavigationDestination(
-      selectedIcon: Icon(Icons.add_chart, color: Colors.white),
+      selectedIcon: Icon(
+        Icons.add_chart,
+        color: Colors.white,
+      ),
       icon: Icon(Icons.add_chart),
       label: 'Respostas',
     ),
@@ -55,9 +58,11 @@ class _BaseScreenState extends State<BaseScreen> {
           onDestinationSelected: (int index) {
             navigationStore.setCurrentIndex(index);
           },
-          indicatorColor: Colors.deepPurple,
+          indicatorColor: AppColors.kPrimaryColor,
           selectedIndex: navigationStore.index,
           destinations: _destinations,
+          backgroundColor: AppColors.kBackgroundColor,
+          elevation: 0,
         ),
       ),
       body: Observer(
