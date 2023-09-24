@@ -10,4 +10,13 @@ class AppColors {
   static const kLightMagenta = Color(0XFFB1C0F6);
   static const kBrown = Color(0XFFCB9771);
   static const kWhite = Color(0XFFFFFFFF);
+
+  static const kPrimaryGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Colors.cyan,
+      Colors.cyanAccent,
+    ],
+  );
 }

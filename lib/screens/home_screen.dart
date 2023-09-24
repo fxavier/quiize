@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:queezy/config/app_colors.dart';
+import 'package:queezy/screens/screens.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -64,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                 ),
                 Text(
-                  'Vai responder questōes sobre oceanos, cada pergunta contem 4 alternativas de respostas onde uma esta correcta',
+                  'Vai responder questōes sobre oceanos, cada pergunta contêm 4 alternativas de respostas onde uma estará correcta. Devirta-se testando seus conhecimentos.',
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -74,19 +75,25 @@ class HomeScreen extends StatelessWidget {
                   height: 10,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const QuestionScreen(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: AppColors.kPrimaryColor,
                     elevation: 20,
                     fixedSize:
                         Size(MediaQuery.of(context).size.width * 0.8, 50),
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  child: Text('Jogar'),
+                  child: const Text('Jogar'),
                 ),
               ],
             ),
